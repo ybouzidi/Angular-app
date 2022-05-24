@@ -1,0 +1,16 @@
+
+
+<div>
+    <ng-content></ng-content>
+</div>
+
+
+<div>
+    <hr>
+    <span>id : {{user.id}}</span>&nbsp;
+    <span>name : {{user.name}}</span>&nbsp;
+    <span>status : {{user.status}}</span>&nbsp;
+    <button class="btn btn-primary" (click)="onUpdateStatus('active')">Active</button>&nbsp;
+    <button class="btn btn-danger" (click)="onUpdateStatus('inactive')">Inactive</button>
+    <hr>
+</div>

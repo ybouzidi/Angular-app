@@ -1,0 +1,75 @@
+
+<app-add-user (userAdded)="changeUserCreatedStatus($event)"></app-add-user>
+<h4 *ngIf="isUserCreated; else noUser">Username of user created is : {{userName}}</h4>
+<ng-template #noUser>
+    <h4>no User is created !</h4>
+</ng-template>
+<button class="btn btn-primary" (click)="onNameChanged()">Change Name</button>
+<button class="btn btn-danger" (click)="onDeleteComponent()">Delete component</button>
+
+
+<!-- <app-user *ngFor="let use of users" [userName]="use.name" [id]="use.id" [name]="name">
+    <ul>
+        <li>
+            <p #userParagraph>{{use.name}} with ID {{ use.id }} </p>
+        </li>
+    </ul>
+    <div>Inserting that is written between the component </div>
+</app-user> -->
+
+
+<hr>
+<ul>
+    <li *ngFor="let use of users">
+        {{use.id}} : {{use.name}}
+    </li>
+</ul>
+
+<div appHighlightText>
+    Please add the background color red
+</div> 
+
+<div appRenderHighlight [defaultColor]="'blue'" [highlightColor]="'orange'">
+    Please add the background color red
+</div> 
+
+<div>
+    <button (click)="isAvailable = ! isAvailable" class="btn btn-primary">
+        toggle condition
+    </button>
+</div>
+<ng-template [ngIf]="isAvailable">
+    <div>
+        show the div when is available ! 
+    </div>  
+</ng-template>
+
+<div *appAlternateif="isAvailable">
+    show the custom directive 
+</div>
+
+<div [ngSwitch]="value">
+    <div *ngSwitchCase="10">value is 10</div>
+    <div *ngSwitchCase="15">value is 15</div>
+    <div *ngSwitchCase="20">value is 20</div>
+    <div *ngSwitchCase="25">value is 25</div>
+    <div *ngSwitchDefault>default</div>
+</div>
+
+
+
+
+
+<hr>
+<h2>Component Life Cycle in Angular : </h2>
+<ul>
+    <li>ngOnChanges</li>
+    <li>ngOnInit</li>
+    <li>ngOnCheck</li>
+    <li>ngAfterContentInit</li>
+    <li>ngAfterContentCkecked</li>
+    <li>ngAfterViewInit</li>
+    <li>ngAfterViewChecked</li>
+    <li>ngOnDestroy</li>
+</ul>
+
